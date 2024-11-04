@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aura Nada Athirotuzzahra</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Gamja+Flower&family=Jua&family=Miniver&family=Mynerve&family=Schoolbell&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: url(kaqai.jpg);
+      font-family: Arial, sans-serif;
+      background-color: pink;
+    }
+
+    .container {
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .image-container {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .image {
+      width: 185px;
+      height: 200px;
+      border-radius: 15px; 
+      margin-bottom: 20px;
+      margin-top: 20px;
+      border: 5px solid white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      transform: translateY(50px);
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .info {
+      padding: 15px;
+      background-color: #fff;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInInfo 1.2s ease forwards;
+    }
+
+
+    .info h2 {
+     font-size: 1.5em;
+     color: #666;
+     margin-bottom: 10px;
+     font-family: Schoolbell;
+     border-bottom: 2px solid #666;
+     padding-bottom: 5px; 
+   }
+
+    .info p {
+      color: #666;
+      font-size: 2em;
+      font-family: Caveat;
+    }
+
+    .buttons {
+      color: pink;
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInInfo {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+   .slideshow-wrapper {
+   width: 184px;
+   height: 190px;
+   position: relative;
+   margin: auto;
+   overflow: hidden;
+   border-radius: 15px;
+   border: 5px solid black;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
+}
+
+   .slideshow-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    }
+
+   .slide {
+     display: none;
+     width: 100%;
+     height: 100%;
+     position: absolute;
+    }
+
+    .fade {
+      animation: fadeEffect 1s;
+    }
+
+    @keyframes fadeEffect {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+  </style>
+</head>
+<body>
+ <div class="container">
+  <div class="image-container">
+    <img src="yayaya.jpg" alt="Description of Image" class="image">
+    <div class="info">
+      <h2>Aura Nada Athirotuzzahra</h2>
+      <p>hai kenalin dia adalah perempuan akuu dia sangat cantik bukan? hahaa </p>
+      
+      <div class="slideshow-wrapper">
+        <div class="slideshow-container">
+          <img src="aura.jpg" alt="gambar 1" class="slide fade">
+          <img src="surya.jpg" alt="gambar 2" class="slide fade">
+          <img src="arara.jpg" alt="gambar 3" class="slide fade">
+        </div>
+      </div>
+
+      <audio autoplay>
+        <source src="daylight.mp3" type="audio/mpeg">
+      </audio>
+
+      <div class="buttons">
+        <a href="kaa">oyaa</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script>
+    let slideIndex = 0;
+
+    function showSlides() {
+        let slides = document.getElementsByClassName("slide");
+
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1; }
+
+        slides[slideIndex - 1].style.display = "block";
+
+        setTimeout(showSlides, 2500);
+    }
+
+
+    showSlides();
+    
+  </script>
+</body>
+</html>
