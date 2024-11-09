@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aura Nada Athirotuzzahra</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Gamja+Flower&family=Jua&family=Miniver&family=Mynerve&family=Schoolbell&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Gamja+Flower&family=Jua&family=Miniver&family=Mynerve&family=Schoolbell&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Ephesis&family=Gamja+Flower&family=Jua&family=Miniver&family=Mynerve&family=Schoolbell&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&family=Waterfall&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: url(kaqai.jpg);
+      font-family: Arial, sans-serif;
+      background-color: pink;
+    }
+
+    .container {
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .image-container {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .image-border {
+      width: 200px;
+      height: 200px;
+      border-radius: 15px;
+      border: 5px solid white;
+      margin: 20px auto;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+    }
+
+    .image {
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transform: translateY(50px);
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .info {
+      padding: 15px;
+      background-color: #fff;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInInfo 1.2s ease forwards;
+    }
+
+    .info h2 {
+      font-size: 2em;
+      color: pink;
+      margin-bottom: 10px;
+      font-family: Waterfall;
+      border-bottom: 2px solid pink;
+      padding-bottom: 5px; 
+    }
+
+    .info p {
+      color: #666;
+      font-size: 1em;
+      font-family: sour Gummy;
+    }
+
+    #you {
+      color: #666;
+      border-bottom: 0px solid #666;
+      margin-top: 14px;
+      font-family: Times new roman;
+    }
+
+    .content p {
+      color: pink;
+      font-family: Schoolbell;
+    }
+
+    .buttons {
+      color: pink;
+      font-family; Times new roman;
+      display: flex;
+      justify-content: center;
+      margin: 20px;
+      column-gap: 25px;
+    }
+    
+     button {
+    text-decoration: none;
+    padding: 12px 30px;
+    background: pink;
+    color: white;
+    font-weight: bold;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+   }
+
+    button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: 0.5s;
+   }
+
+    button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+   }
+
+    button:hover::before {
+    left: 100%;
+   }
+
+    button:active {
+    transform: scale(0.95);
+    }
+
+    button a {
+    color: white;
+    text-decoration: none;
+   }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInInfo {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .slideshow-wrapper {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    .slide {
+      display: none;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+    }
+
+    .fade {
+      animation: fadeEffect 1s;
+    }
+
+    @keyframes fadeEffect {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+  </style>
+</head>
+<body>
+ <div class="container">
+  <div class="image-container">
+    <div class="image-border">
+      <div class="slideshow-wrapper">
+        <div class="slideshow-container">
+          <img src="aora.gif" alt="gambar 1" class="slide fade">
+          <img src="aer.gif" alt="gambar 3" class="slide fade">
+          <img src="aror.gif" alt="gambar 2" class="slide fade">
+          <img src="huh.gif" alt="gambar 3" class="slide fade">
+          <img src="aero.gif" alt="gambar 3" class="slide fade">
+          <img src="ayu.gif" alt="gambar 3" class="slide fade">
+        </div>
+      </div>
+    </div>
+
+    <div class="info">
+      <h2>Aura Nada Athirotuzzahra</h2>
+      <p>hai kenalin dia adalah perempuan akuu...dia sangat cantik bukan? yup... she so pretty in the world, and dia terlalu lucuu untuk seorang manusia emm jangan" bukan manusia yaa? udaa cantik, lucuu, baik, lembut.....apaa jangan" dia bidadari yaa yang turun ke bumi!??!? ahahha so very lucky bisa milikin dia...mauu nyari sifat dia di orang lain kayanya mustahil dehh soalnya cuma ada di pacarkuuu cantikkuuu cintakuuu princesskuuu wanitakuuu bidadarikuuu mermaidkuuu duniakuuu semestakuuu inii, ga ada yang perfect selain wanita akuu inii, she too perfect to talk about...I'm proud to have she, mauu ribuan kata yang diucapin tentang se perfect apaa dia kira" (∞) segituu dehh...unlimited!!! seluas angkasa ajaa kalah
+
+oyaa dia kadang kalo lagi kangen tuu kaya anak kecik emm gumushhh bangett ciii cewe akuu inii....mauu di puk-puk? bolee bolee selalu buat kesayangan akuu inii, suka bangett kalo di puk-puk yaaa, terus suka warna yang pink gituu katanya kaya lucu gituu, samaa kalo makanan apaa yaa banyak banget kaya salad, dimsum, wonton, eskrim, basreng, emm apaa lagi yaa lupa tapii bener kann? yayyy, teruss pedes" an juga terus abis tuu bilang (belet eek/mules) huhh dibilangin makan pedesnya jangan pedes", sinii tak cubit gemeshh banget dehh. 
+
+so makaciii banget sama dia udaa hadir di hidup akuu, dia berii akuu warna yang cerah setiap harii jadii ngerasa diberi kebahagiaan banget sama dia yang tak terbatas... akuu sayang sama dia selalu, semisal akuu ga sama dia...gatau lagii mau jelasin gimana maybe engga bakal pernah ngerasain kebahagiaan apaa yang pernah dia kasii, so lucky bertemu dengan dia and i'm proud of her, sekali lagii makaciii...selalu adaa doa yang terbaik buat dia selalu, i loveee her more more and more always.</p>
+
+      <audio autoplay>
+        <source src="about.mp3" type="audio/mpeg">
+      </audio>
+    <div class="content">
+      <h2 id="you">sosmed</h2>
+    </div>
+      <div class="buttons">
+        <a href="https://www.tiktok.com/@yoofraa"><img src="tiktok.svg" width="35" height="35"></a>
+        
+        <a href="https://wa.me/6281325147722"><img src="what.svg" width="35" height="35"></a>
+        
+        <a href="https://www.instagram.com/flowerpuffp8?igsh=MTdva3UzZXVpeWg5eQ=="><img src="ins.svg" width="35" height="35"></a>
+        
+        <a href="https://open.spotify.com/user/31mgqujpwbr7i5iy36my6qrunrre?si=jCTXn2PkQJamxFcMdlOYPQ"><img src="spot.svg" width="35" height="35"></a>
+        
+        <a href="https://t.me/thzzui"><img src="tele.svg" width="35" height="35"></a>
+        
+        
+      </div> 
+      
+      
+      <button><a href="makasi.html">next</button></a>
+    </div>
+  </div>
+</div>
+
+  <script>
+    let slideIndex = 0;
+
+    function showSlides() {
+        let slides = document.getElementsByClassName("slide");
+
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1; }
+
+        slides[slideIndex - 1].style.display = "block";
+
+        setTimeout(showSlides, 2600);
+    }
+
+    showSlides();
+    
+  </script>
+</body>
+</html>

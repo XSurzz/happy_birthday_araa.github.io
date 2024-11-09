@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+  <title>surzz</title>
+<head>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: url(backh.jpg);
+            overflow: hidden;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            text-align: center;
+            z-index: 2;
+        }
+
+        .text-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .thank-you {
+            font-size: 3.5em;
+            color: white;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            animation: simpleFloat 2s infinite;
+        }
+
+        .subtitle {
+            color: white;
+            font-size: 1.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+
+        @keyframes simpleFloat {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .love {
+            position: fixed;
+            font-size: 24px;
+            pointer-events: none;
+            animation: fallAndSpin linear infinite;
+            z-index: 1;
+        }
+
+        @keyframes fallAndSpin {
+            0% {
+                transform: translateY(-100vh) translateX(-20px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) translateX(20px) rotate(360deg);
+                opacity: 0.3;
+            }
+        }
+
+        .button-container {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            background-color: #A0CFEC;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            text-decoration: none;
+            color: #333;
+        }
+
+        .button:hover {
+            transform: scale(1.1);
+            background-color: white;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .nav-button {
+            background-color: #A0CFEC;
+            color: #ff1493;
+            font-weight: bold;
+        }
+
+        .next-button {
+            text-decoration: none;
+          color: white;
+          background: #A0CFEC;
+          font-weight: bold;
+          padding: 10px 30px;
+          border-radius: 100px;
+          transition: background-color 0.3s, box-shadow 0.3s;
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+        }
+
+        .next-button:hover {
+            background: #A0CFEC;
+        }
+
+        .next-button::after {
+            content: '→';
+            font-size: 1.4em;
+            transition: transform 0.3s ease;
+        }
+
+        .next-button:hover::after {
+            transform: translateX(5px);
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .page-nav {
+            position: fixed;
+            bottom: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 3;
+        }
+
+        .page-indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            margin: 0 5px;
+        }
+
+        .page-indicator.active {
+            background: white;
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text-container">
+            <div class="thank-you">END</div>
+        </div>
+        
+        <div class="button-container">
+            </button>
+
+        </div>
+
+        <a href="album.html" class="button next-button">next</a>
+    </div>
+
+    <!-- Page indicators -->
+    <div class="page-nav">
+        <div class="page-indicator active"></div>
+        <div class="page-indicator"></div>
+        <div class="page-indicator"></div>
+    </div>
+
+    <script>
+        const loves = ['❤i, '💖', '💕', '💗', '💓', '💝', '💘'];
+        let loveCount = 0;
+
+        function createLove() {
+            const love = document.createElement('div');
+            love.className = 'love';
+            love.innerHTML = loves[Math.floor(Math.random() * loves.length)];
+            
+            const startX = Math.random() * window.innerWidth;
+            const duration = (Math.random() * 2 + 5);
+            
+            love.style.left = startX + 'px';
+            love.style.animationDuration = duration + 's';
+            
+            const size = Math.random() * 20 + 20;
+            love.style.fontSize = size + 'px';
+            
+            document.body.appendChild(love);
+            
+            setTimeout(() => {
+                love.remove();
+                loveCount--;
+            }, duration * 1000);
+        }
+
+        function addMoreLove() {
+            for (let i = 0; i < 15; i++) {
+                setTimeout(() => {
+                    if (loveCount < 150) {
+                        createLove();
+                        loveCount++;
+                    }
+                }, i * 100);
+            }
+        }
+
+        function startLoveRain() {
+            setInterval(() => {
+                if (loveCount < 100) {
+                    createLove();
+                    loveCount++;
+                }
+            }, 300);
+        }
+
+        window.onload = () => {
+            startLoveRain();
+            addMoreLove();
+        };
+
+        window.addEventListener('resize', () => {
+            const loves = document.querySelectorAll('.love');
+            loves.forEach(love => {
+                love.style.left = Math.random() * window.innerWidth + 'px';
+            });
+        });
+    </script>
+</body>
+</html>
